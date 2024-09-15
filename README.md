@@ -20,3 +20,7 @@ state4: the sequence now is "1011", output = 1; if stream = 0, move to state2, t
 
 To run simulation:
 make all_wave MEALY_FSM=1 LENGTH=32 (MEALY_FSM=0: MOORE_FSM; LENGTH="flexible")
+
+![image](https://github.com/user-attachments/assets/695389a3-dba5-4e07-b22f-85cb1993d4ca)
+
+![image](https://github.com/user-attachments/assets/204e47b7-158f-4c6a-afbd-5930a0c1987f)
