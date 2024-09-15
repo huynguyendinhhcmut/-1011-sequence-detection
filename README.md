@@ -5,7 +5,18 @@ An FSM to detect a sequence of “1011” in a stream of bit. (The left most bit
 FSM diagram:
 
 
-![image](https://github.com/user-attachments/assets/09af947b-a6ec-4ed0-b0bb-eedf87bc0e84)
+![image](https://github.com/user-attachments/assets/f9fcccfc-1ed4-4262-b14f-24c10369408f)
+
+
+state0: start decting bit "1"; if there's bit "1", move to state1
+
+state1: the sequence now is "1???"; if stream = 1, keep waiting; if there's bit "0", move to state 2
+
+state2: the sequence now is "10??"; if stream = 0, move to state0, reset the sequence; if there's bit "1", move to state3
+
+state3: the sequence now is "101?"; if stream = 0, move to state0, reset the sequence; if there's bit "1", move to state4
+
+state4: the sequence now is "1011", output = 1; if stream = 0, move to state2, the sequence is now "10??"; if there's bit "1", move to state1, is now "1???"
 
 To run simulation:
 make all_wave MEALY_FSM=1 LENGTH=32 (MEALY_FSM=0: MOORE_FSM; LENGTH="flexible")
